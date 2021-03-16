@@ -44,12 +44,11 @@ function renderMagicArt() {
         })
         album.innerHTML = items.join('')
         content.remove()
-        // _.each(document.querySelectorAll('li a'), a.addEventListener('click', function() {
-        //     if (getPath()) {
-        //         location.hash = '#'
-        //     }
-        // }))
         renderImageView()
+        const email = atob("ZmFudGFzdGljYXJ0c2hvcEBnbWFpbC5jb20=")
+        const emailAnchor = document.getElementById('email')
+        emailAnchor.innerHTML = email
+        emailAnchor.href = `mailto:${email}`
         document.body.classList.remove('cloak')
     } catch (err) {
         console.error(err)
